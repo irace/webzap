@@ -8,8 +8,8 @@ import webbrowser
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
-def hello_world():
-    return render_template('configure.html')
+def start():
+    return render_template('start.html')
 
 @app.route('/openurl', methods=['POST'])
 @crossdomain(origin='*', methods=['POST'])
@@ -22,4 +22,5 @@ def open_url():
     return jsonify(message='Pushed!')
 
 if __name__ == '__main__':
+    # Make visible to other computers on my network
     app.run(host='0.0.0.0')
