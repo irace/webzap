@@ -1,7 +1,7 @@
 $(function() {
     // Update bookmarklet source with current location URL
     $('code').html(function(i, old) {
-        return old.replace('SERVICE_URL', location.href)
+        return old.replace('@SERVICE_URL@', location.href)
     });
 
     // Minify bookmarklet source

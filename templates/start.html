@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <head>
-    <title>webzap</title>
+    <title>webzap!</title>
 
-    <link rel="stylesheet" href="static/prettify.css" type="text/css" />
-    <link rel="stylesheet" href="static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="static/prettify.css" />
+    <link rel="stylesheet" href="static/styles.css" />
 
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-    <script type="text/javascript" src="static/prettify.js"></script>
-    <script type="text/javascript" src="static/scripts.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="static/prettify.js"></script>
+    <script src="static/scripts.js"></script>
 </head>
 
 <body>
@@ -31,7 +30,7 @@
     script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js';
     script.onload = function() {
         // TODO: Need to make this more robust - what if jQuery is already loaded, etc.
-        $.post('SERVICE_URLopenurl', { url: location.href }, function(data){
+        $.post('@SERVICE_URL@openurl', { url: location.href }, function(data){
             alert(data.message);
         });
 
