@@ -6,13 +6,16 @@ $(function() {
 
     // Minify bookmarklet source
     $.post('http://closure-compiler.appspot.com/compile',
-        { js_code: $('code').html(),
+        { js_code: $('#source').html(),
           compilation_level: 'WHITESPACE_ONLY',
           output_format: 'text',
           output_info: 'compiled_code' },
         function(data) {
+            var url = 'javascript:' + data;
+        
             // Update bookmarklet link HREF
             $('#bookmarklet').attr('href', 'javascript:' + data);
+            $('#minified').html(url);
     });
 
     // Initial setting of bookmark label value

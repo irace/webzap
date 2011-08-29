@@ -1,7 +1,12 @@
 section {
+    width: 70%;
     font-family: Helvetica, sans-serif;
 }
 
-code {
+#minified {
+    word-wrap: break-word;
+}
+
+#source {
     white-space: pre;
 }
