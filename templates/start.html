@@ -11,6 +11,10 @@
 </head>
 
 <body>
+	<header>
+		<strong>webzap</strong> is a simple tool for pushing webpages from one computer to another. The destination (e.g. an iMac) runs a lightweight Python HTTP server and source devices (e.g. laptops, phones or tablets) use a bookmarklet to send over the desired page. 
+	</header>
+
     <section>
         <h1>Customize</h1>
         <input type="text" id="bookmarklet_label" value="Push to Desktop" />
@@ -29,20 +33,28 @@
     <section>
         <h1>Source (pretty-fied)</h1>
         <code class="prettyprint" id="source">(function() {
-    var head = document.getElementsByTagName('head')[0];
-    
-    var script = document.createElement('script');
-    script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js';
-    script.onload = function() {
-        // TODO: Need to make this more robust - what if jQuery is already loaded, etc.
+    var f = function() {
+      jQuery.noConflict()(function($) {
         $.post('@SERVICE_URL@openurl', { url: location.href }, function(data) {
-            alert(data.message);
+          alert(data.message);
         });
-
-        head.removeChild(script);
+      });
     };
+  
+    if (typeof jQuery != 'undefined') {
+      f();
+    } else {
+      var head = document.getElementsByTagName('head')[0];
+    
+      var script = document.createElement('script');
+      script.src = 'http://code.jquery.com/jquery-latest.min.js';
+      script.onload = function() {
+        f();
+        head.removeChild(script);
+      };
     
     head.appendChild(script);
+  }
 })();
         </code>
     </section>
