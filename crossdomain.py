@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 # Decorator for the HTTP Access Control (http://flask.pocoo.org/snippets/56/)
 # By Armin Ronacher
 
