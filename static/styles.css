@@ -1,12 +1,54 @@
-header, section {
-    width: 70%;
-    font-family: Helvetica, sans-serif;
+section {
+    margin-bottom: 2%;
 }
 
-#minified {
-    word-wrap: break-word;
+.page-header, pre {
+    text-align: left;
 }
 
-#source {
-    white-space: pre;
+section {
+    text-align: center;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 2) {
+    .hero-unit {
+        padding: 50px 10px 5px 10px;
+        margin-bottom: 5px;
+    }
+
+    .hero-unit p {
+        font-size: 0.9em;
+    }
+
+    .hero-unit p,
+    .page-header h1 {
+        line-height: 1.2em;
+    }
+
+    .page-header h1 {
+        font-size: 1.3em;
+    }
+
+    .page-header h1 small {
+        font-size: 0.8em;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .row {
+        margin-left: 0;
+    }
+
+    input.span10,
+    textarea.span10,
+    .row > [class*="span"] {
+        width: 90%;
+    }
+
+    .row > [class*="span"] {
+        float: none;
+        clear: both;
+    }
 }

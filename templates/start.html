@@ -1,62 +1,95 @@
 <!DOCTYPE html>
 <head>
     <title>webzap!</title>
-
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    
+    <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
     <link rel="stylesheet" href="static/prettify.css" />
     <link rel="stylesheet" href="static/styles.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script src="static/prettify.js"></script>
     <script src="static/scripts.js"></script>
+
 </head>
 
 <body>
-	<header>
-		<strong>webzap</strong> is a simple tool for pushing webpages from one computer to another. The destination (e.g. an iMac) runs a lightweight Python HTTP server and source devices (e.g. laptops, phones or tablets) use a bookmarklet to send over the desired page. 
-	</header>
+
+<div class="topbar">
+    <div class="fill">
+        <div class="container">
+            <a class="brand" href="#">webzap!</a>
+            <p class="pull-right"><a href="http://github.com/irace/webzap">GitHub</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="hero-unit">
+        <p>A simple, unobtrusive tool for pushing webpages from one device to another. The destination computer runs a
+            lightweight HTTP server and source devices (e.g. laptops/phones/tablets) use a
+            <a href="http://en.wikipedia.org/wiki/Bookmarklet">bookmarklet</a> to send over the desired page.</p>
+    </div>
+
+    <section class="row">
+        <div class="span8">
+            <div class="page-header">
+                <h1>Bookmarklet</h1>
+            </div>
+            <a id="bookmarklet" class="btn large primary">&nbsp;</a>
+        </div>
+        <div class="span8">
+            <div class="page-header">
+                <h1>Customize</h1>
+            </div>
+
+            <input type="text" id="bookmarklet_label" value="Push to Desktop"/>
+        </div>
+    </section>
 
     <section>
-        <h1>Customize</h1>
-        <input type="text" id="bookmarklet_label" value="Push to Desktop" />
-    </section>
-    
-    <section>
-        <h1>Bookmarklet</h1>
-        <a id="bookmarklet">&nbsp;</a>
+        <div class="page-header">
+            <h1>Bookmarklet URL <small>Minified</small></h1>
+        </div>
+        
+        <textarea class="copycode span10" id="minified" rows="5">&nbsp;</textarea>
     </section>
 
     <section>
-        <h1>Bookmarklet URL (minified)</h1>
-        <code class="prettyprint" id="minified">&nbsp;</code>
-    </section>
-
-    <section>
-        <h1>Source (pretty-fied)</h1>
-        <code class="prettyprint" id="source">(function() {
+        <div class="page-header">
+            <h1>Source <small>Based on this basic <a href="https://gist.github.com/1041837">jQuery bookmarklet</a>
+                template</small></h1>
+        </div>
+        
+        <pre class="prettyprint" id="source">(function() {
     var f = function() {
       jQuery.noConflict()(function($) {
-        $.post('@SERVICE_URL@openurl', { url: location.href }, function(data) {
+        $.post('{{ url }}openurl', { url: location.href }, function(data) {
           alert(data.message);
         });
       });
     };
-  
+
     if (typeof jQuery != 'undefined') {
       f();
     } else {
       var head = document.getElementsByTagName('head')[0];
-    
+
       var script = document.createElement('script');
       script.src = 'http://code.jquery.com/jquery-latest.min.js';
       script.onload = function() {
         f();
         head.removeChild(script);
       };
-    
+
     head.appendChild(script);
   }
-})();
-        </code>
+})();</pre>
     </section>
+
+    <section>
+        <p>By <a href="http://bryanirace.com">Bryan Irace</a></p>
+    </section>
+</div>
 
 </body>

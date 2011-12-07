@@ -1,8 +1,6 @@
 $(function() {
-    // Update bookmarklet source with current location URL
-    $('code').html(function(i, old) {
-        return old.replace('@SERVICE_URL@', location.href)
-    });
+    // Set initial link text
+    setBookmarkletLinkText();
 
     // Minify bookmarklet source
     $.post('http://closure-compiler.appspot.com/compile',
@@ -11,25 +9,20 @@ $(function() {
           output_format: 'text',
           output_info: 'compiled_code' },
         function(data) {
-            var url = 'javascript:' + data;
-        
-            // Update bookmarklet link HREF
-            $('#bookmarklet').attr('href', 'javascript:' + data);
-            $('#minified').html(url);
+            var bookmarklet_href = 'javascript:' + data;
+            $('#bookmarklet').attr('href', bookmarklet_href);
+            $('#minified').html(bookmarklet_href);
     });
 
-    // Initial setting of bookmark label value
-    updateBookmarkletLabel();            
-
-    // Update bookmarklet label value when edited by user
+    // Update bookmarklet text when edited by user
     $('#bookmarklet_label').keyup(function() {
-        updateBookmarkletLabel();
+        setBookmarkletLinkText();
     });
     
     // Add syntax highlighting (depends on prettify.js)
     prettyPrint();
 });
 
-function updateBookmarkletLabel() {
+function setBookmarkletLinkText() {
     $('#bookmarklet').html($('#bookmarklet_label').val());
 }

@@ -6,14 +6,12 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def start():
-    return render_template('start.html')
+    return render_template('start.html', url=request.base_url)
 
 @app.route('/openurl', methods=['POST'])
 @crossdomain(origin='*', methods=['POST'])
 def open_url():
     url = request.form['url']
-    app.logger.debug('Opening ' + url)
-    
     webbrowser.open(url)
     
     return jsonify(message='Pushed!')
