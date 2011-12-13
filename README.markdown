@@ -1,3 +1,7 @@
-Webzap can be installed and started simply by running the following in a Unix prompt. It requires [easy_install](http://pypi.python.org/pypi/setuptools) and will use it to install the [Flask](http://flask.pocoo.org/) library, so you may want to run the following from inside a [virtualenv](http://pypi.python.org/pypi/virtualenv).
+Webzap is a simple, unobtrusive tool for pushing webpages from one device to another. The destination computer runs a lightweight HTTP server and source devices (e.g. laptops/phones/tablets) use a bookmarklet to send over the desired page.
+
+Webzap can be installed and started by simply running the following command from a Unix prompt (it requires [easy_install](http://pypi.python.org/pypi/setuptools) and will use it to download [Flask](http://flask.pocoo.org/), so you may want to run it from inside a [virtualenv](http://pypi.python.org/pypi/virtualenv)):
 
 ```curl https://raw.github.com/irace/webzap/master/install.sh | bash```
+
+After running, Webzap will be accessible at http://localhost.com:5000. Visit that address from your source device and follow the instructions to install the bookmarklet.
