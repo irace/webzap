@@ -1,1 +1,3 @@
-curl https://github.com/irace/webzap/blob/master/install.sh | bash
+Webzap can be installed and started simply by running the following in a Unix prompt. It requires [easy_install](http://pypi.python.org/pypi/setuptools) and will use it to install the [Flask](http://flask.pocoo.org/) library, so you may want to run the following from inside a [virtualenv](http://pypi.python.org/pypi/virtualenv).
+
+```curl https://raw.github.com/irace/webzap/master/install.sh | bash```
