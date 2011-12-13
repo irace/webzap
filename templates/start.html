@@ -64,9 +64,17 @@
         <pre class="prettyprint" id="source">(function() {
     var f = function() {
       jQuery.noConflict()(function($) {
-        $.post('{{ url }}openurl', { url: location.href }, function(data) {
-          alert(data.message);
-        });
+        $.ajax({
+	  type: 'post',
+	  url: '{{ url }}openurl',
+	  data: { url: location.href }, 
+	  success: function(data) {
+            alert(data.message);
+          },
+	  error: function() {
+	    alert('Unable to send page.');
+	  }
+	});
       });
     };
 
