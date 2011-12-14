@@ -8,13 +8,12 @@ app = Flask(__name__)
 def start():
     return render_template('start.html', url=request.base_url)
 
-@app.route('/openurl', methods=['POST'])
-@crossdomain(origin='*', methods=['POST'])
+@app.route('/openurl', methods=['POST', 'OPTIONS'])
+@crossdomain(origin='*', methods=['POST', 'OPTIONS'], headers='x-requested-with')
 def open_url():
     url = request.form['url']
     webbrowser.open(url)
-    
-    return jsonify(message='Pushed!')
+    return 'Pushed!'
 
 if __name__ == '__main__':
     # Make visible to other computers on my network
