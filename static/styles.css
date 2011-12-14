@@ -10,6 +10,12 @@ section {
     text-align: center;
 }
 
+.instructions {
+    font-family: 'Handlee', cursive;
+    font-size: large;
+    margin-bottom: 2%;
+}
+
 @media all and (-webkit-min-device-pixel-ratio: 2) {
     .hero-unit {
         padding: 50px 10px 5px 10px;

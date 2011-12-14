@@ -3,6 +3,7 @@
     <title>webzap!</title>
     <meta name="viewport" content="width=device-width, user-scalable=no">
     
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Handlee">
     <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
     <link rel="stylesheet" href="static/prettify.css" />
     <link rel="stylesheet" href="static/styles.css" />
@@ -36,12 +37,16 @@
             <div class="page-header">
                 <h1>Bookmarklet</h1>
             </div>
+	    <div class="instructions">Option 1: Drag this button to your bookmark bar.</div>
+
             <a id="bookmarklet" class="btn large primary">&nbsp;</a>
         </div>
         <div class="span8">
             <div class="page-header">
                 <h1>Customize</h1>
             </div>
+
+	    <div class="instructions">Customize the button title.</div>
 
             <input type="text" id="bookmarklet_label" value="Push to Desktop"/>
         </div>
@@ -51,7 +56,8 @@
         <div class="page-header">
             <h1>Bookmarklet URL <small>Minified</small></h1>
         </div>
-        
+        <div class="instructions">Option 2: Create a new bookmark and paste this as the URL.</div>
+
         <textarea class="copycode span10" id="minified" rows="5">&nbsp;</textarea>
     </section>
 
@@ -68,8 +74,8 @@
 	  type: 'post',
 	  url: '{{ url }}openurl',
 	  data: { url: location.href }, 
-	  success: function(data) {
-            alert(data.message);
+	  success: function() {
+            alert('Pushed!');
           },
 	  error: function() {
 	    alert('Unable to send page.');
