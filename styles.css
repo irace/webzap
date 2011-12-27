@@ -38,6 +38,10 @@ header {
     border-bottom: 0;
 }
 
+p.tweet {
+    text-align: right;
+}
+
 a.footnote {
     vertical-align: super;
 }
