@@ -2,16 +2,28 @@ body {
     background-color: #3A5894;
     background: no-repeat 0 50% -moz-radial-gradient(50% 0%, circle, #739AC5, #3A5894);
     background: no-repeat 0 50% -webkit-gradient(radial, center top, 0, center top, 600, from(#739AC5), to(#3A5894));
-    text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.3);
+    padding-bottom: 50px;
 
     color: white;
-
     font-family: 'Trykker', serif;
+    text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.3);
+}
+
+section, header {
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
 }
 
 header, #content {
     position: relative;
     margin: auto;
+}
+
+header, #content, img {
+    margin: auto;
+}
+
+img {
+    display: block;
 }
 
 header {
@@ -21,13 +33,9 @@ header {
 
 #content {
     width: 600px;
-    border-bottom: 0;
-
     font-size: 1.2em;
-}
 
-section, header {
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
+    border-bottom: 0;
 }
 
 a.footnote {
@@ -40,6 +48,6 @@ em {
     padding: 2px;
 }
 
-a:active, a:visited, a:hover, a:link {
+a:link, a:visited, a:hover, a:active {
     color: white;
 }
