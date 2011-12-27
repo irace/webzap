@@ -30,9 +30,8 @@ section, header {
     border-bottom: 1px dashed rgba(0, 0, 0, 0.5);
 }
 
-section.last {
-    border-bottom: 0;
-    margin-bottom: 5em;
+a.footnote {
+    vertical-align: super;
 }
 
 em {
