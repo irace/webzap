@@ -16,7 +16,7 @@ section {
     margin-bottom: 2%;
 }
 
-@media all and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (max-device-width: 480px) {
     .hero-unit {
         padding: 50px 10px 5px 10px;
         margin-bottom: 5px;
@@ -43,17 +43,24 @@ section {
         width: 95%;
     }
 
+    section, .row > [class*="span"] {
+        margin-bottom: 5%;
+    }
+
     .row {
         margin-left: 0;
     }
 
     input.span10,
-    textarea.span10,
-    .row > [class*="span"] {
+    textarea.span10 {
         width: 90%;
     }
 
     .row > [class*="span"] {
+        width: 100%;
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
         float: none;
         clear: both;
     }
