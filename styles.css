@@ -46,6 +46,10 @@ a.footnote {
     vertical-align: super;
 }
 
+p.byline {
+    text-align: center;
+}
+
 em {
     font-style: normal;
     background-color: #739AC5;
