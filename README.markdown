@@ -8,7 +8,7 @@ Webzap can be installed and started by simply running the following command from
 
 ```curl https://raw.github.com/irace/webzap/master/install.sh | bash```
 
-After running, Webzap will be accessible at `http://hostname:5000`, where `hostname` is the computer running Webzap's name on the local network (e.g. `192.168.1.145`). Visit that address from your source device and follow the instructions to install the bookmarklet.
+After running, Webzap will be accessible at `http://hostname:5000`, where `hostname` is name of the the computer running Webzap on the local network (e.g. `192.168.1.145`). Visit that address from your source device and follow the instructions to install the bookmarklet.
 
 When viewing a page that you'd like to read later, choose the bookmarklet from your browser's bookmarks and it will be opened on the destination computer.
 
